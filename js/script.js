@@ -5,12 +5,15 @@ function infoPosition () {
 
 $( window ).resize(function() {
 	var position;
-	
+	var width;
     if ($(window).width() >= 1260) {
 		$("#info").css("visibility", "visible");
-		position = ((($(window).width() - 800 ) / 2 ) - 230) / 2;
-		$("#info").css("left", parseInt(position));
-		$("#notes-right").css("right", parseInt(position));		
+		$("#notes-right").css("visibility", "visible");		
+//		position = ((($(window).width() - 800 ) / 2 ) - 230) / 2;
+		width = ((($(window).width() - 800 ) / 2 ) - 40);
+		$("#info").css("width", parseInt(width));
+		$("#notes-right").css("width", parseInt(width));
+//		$("#notes-right").css("right", parseInt(position));		
 	}
 	else {
 		$("#info").css("visibility", "hidden");
@@ -22,12 +25,15 @@ $( window ).resize(function() {
 
 $(document).ready(function() {
 	var position;
-	
+	var width;	
     if ($(window).width() >= 1260) {
 		$("#info").css("visibility", "visible");
-		position = ((($(window).width() - 800 ) / 2 ) - 230) / 2;
-		$("#info").css("left", parseInt(position));
-		$("#notes-right").css("right", parseInt(position));
+		$("#notes-right").css("visibility", "visible");		
+		//		position = ((($(window).width() - 800 ) / 2 ) - 230) / 2;
+		width = ((($(window).width() - 800 ) / 2 ) - 40);
+		$("#info").css("width", parseInt(width));
+		$("#notes-right").css("width", parseInt(width));		
+//		$("#notes-right").css("right", parseInt(position));
 	}
 	else {
 		$("#info").css("display", "none");
