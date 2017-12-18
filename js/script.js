@@ -6,11 +6,11 @@ function infoPosition () {
 $( window ).resize(function() {
 	var position;
 	var width;
-    if ($(window).width() >= 1260) {
+    if ($(window).width() >= 1310) {
 		$("#info").css("visibility", "visible");
 		$("#notes-right").css("visibility", "visible");		
 //		position = ((($(window).width() - 800 ) / 2 ) - 230) / 2;
-		width = ((($(window).width() - 800 ) / 2 ) - 40);
+		width = ((($(window).width() - 850 ) / 2 ) - 40);
 		$("#info").css("width", parseInt(width));
 		$("#notes-right").css("width", parseInt(width));
 //		$("#notes-right").css("right", parseInt(position));		
@@ -26,11 +26,11 @@ $( window ).resize(function() {
 $(document).ready(function() {
 	var position;
 	var width;	
-    if ($(window).width() >= 1260) {
+    if ($(window).width() >= 1310) {
 		$("#info").css("visibility", "visible");
 		$("#notes-right").css("visibility", "visible");		
 		//		position = ((($(window).width() - 800 ) / 2 ) - 230) / 2;
-		width = ((($(window).width() - 800 ) / 2 ) - 40);
+		width = ((($(window).width() - 850 ) / 2 ) - 40);
 		$("#info").css("width", parseInt(width));
 		$("#notes-right").css("width", parseInt(width));		
 //		$("#notes-right").css("right", parseInt(position));
