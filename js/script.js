@@ -6,13 +6,15 @@ function infoPosition () {
 $( window ).resize(function() {
 	var position;
 	
-    if ($(window).width() >= 1310) {
+    if ($(window).width() >= 1260) {
 		$("#info").css("visibility", "visible");
-		position = ((($(window).width() - 850 ) / 2 ) - 230) / 2;
+		position = ((($(window).width() - 800 ) / 2 ) - 230) / 2;
 		$("#info").css("left", parseInt(position));
+		$("#notes-right").css("right", parseInt(position));		
 	}
 	else {
 		$("#info").css("visibility", "hidden");
+		$("#notes-right").css("visibility", "hidden");		
 	}	
 	
 //  $( "#heading" ).prepend( "<div>" + $( window ).width() + "</div>" );
@@ -21,13 +23,15 @@ $( window ).resize(function() {
 $(document).ready(function() {
 	var position;
 	
-    if ($(window).width() >= 970) {
+    if ($(window).width() >= 1260) {
 		$("#info").css("visibility", "visible");
-		position = ((($(window).width() - 850 ) / 2 ) - 230) / 2;
+		position = ((($(window).width() - 800 ) / 2 ) - 230) / 2;
 		$("#info").css("left", parseInt(position));
+		$("#notes-right").css("right", parseInt(position));
 	}
 	else {
 		$("#info").css("display", "none");
+		$("#notes-right").css("visibility", "hidden");
 	}
 });
 
