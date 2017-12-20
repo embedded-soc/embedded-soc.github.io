@@ -1,51 +1,68 @@
-
-function infoPosition () {
-
-}
-
 $( window ).resize(function() {
 	var position;
-	var width;
+
     if ($(window).width() >= 1310) {
+		
 		$("#info").css("visibility", "visible");
-		$("#notes-right").css("visibility", "visible");		
-//		position = ((($(window).width() - 800 ) / 2 ) - 230) / 2;
-		width = ((($(window).width() - 850 ) / 2 ) - 40);
-		$("#info").css("width", parseInt(width));
-		$("#notes-right").css("width", parseInt(width));
-//		$("#notes-right").css("right", parseInt(position));		
+		$("#info-center").css("display", "none");
+		
+		position = ((($(window).width() - 850 ) / 2 ) - 230 - 20);
+
+		if ( position > 0 ) {
+			$("#info").css("left", parseInt(position));		
+		} else {
+			$("#info").css("left", 0);		
+		}
 	}
 	else {
 		$("#info").css("visibility", "hidden");
-		$("#notes-right").css("visibility", "hidden");		
+		$("#info-center").css("display", "block");
 	}	
-	
-//  $( "#heading" ).prepend( "<div>" + $( window ).width() + "</div>" );
+
 });
 
 $(document).ready(function() {
 	var position;
-	var width;	
+	
     if ($(window).width() >= 1310) {
+			
 		$("#info").css("visibility", "visible");
-		$("#notes-right").css("visibility", "visible");		
-		//		position = ((($(window).width() - 800 ) / 2 ) - 230) / 2;
-		width = ((($(window).width() - 850 ) / 2 ) - 40);
-		$("#info").css("width", parseInt(width));
-		$("#notes-right").css("width", parseInt(width));		
-//		$("#notes-right").css("right", parseInt(position));
+		$("#info-center").css("display", "none");
+
+		position = ((($(window).width() - 850 ) / 2 ) - 230 - 20);
+		
+		if ( position > 0 ) {
+			$("#info").css("left", parseInt(position));		
+		} else {
+			$("#info").css("left", 0);		
+		}
 	}
 	else {
-		$("#info").css("display", "none");
-		$("#notes-right").css("visibility", "hidden");
+		$("#info").css("visibility", "hidden");
+		$("#info-center").css("display", "block");
 	}
 });
 
-$("#logo-left-img").hover(function(){
+$("#plus-minus").click(function() {
+
+	if ($("#plus-minus").text().toLowerCase() === "[-]".toLowerCase()) {
+		$("#plus-minus").text("[+]"); 
+		$("#info-center-contents").css("display", "none");
+	} else {
+		$("#plus-minus").text("[-]"); 
+		$("#info-center-contents").css("display", "block");	
+	}
 	
-    $(this).attr("src","./images/logo-color2.png");
-    
-	}, function(){
-    
-	$(this).attr("src","./images/logo-gray2.png");
+	return false;
 });
+
+$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > div:first')
+    .fadeOut(2000)
+    .next()
+    .fadeIn(2000)
+    .end()
+    .appendTo('#slideshow');
+},  5000);
